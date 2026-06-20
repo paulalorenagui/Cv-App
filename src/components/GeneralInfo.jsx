@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/GeneralInfo.css";
 
 function GeneralInfo() {
   const [name, setName] = useState("");
@@ -21,7 +22,7 @@ function GeneralInfo() {
   }
 
   return (
-    <>
+    <div className="section">
       <h2>General Information</h2>
       {isEditing ? (
         <>
@@ -72,7 +73,7 @@ function GeneralInfo() {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 }
 export default GeneralInfo;

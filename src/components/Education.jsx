@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/Education.css";
 
 function Education() {
   const [schoolName, setSchoolName] = useState("");
@@ -16,7 +17,7 @@ function Education() {
     setDateOfStudy(e.target.value);
   }
   return (
-    <>
+    <div className="section">
       <h2>Education</h2>
       {isEditing ? (
         <>
@@ -40,6 +41,8 @@ function Education() {
             <input
               type="date"
               placeholder="Date Of Study"
+              min="1900-01-01"
+              max="2099-12-31"
               value={dateOfStudy}
               onChange={handledateOfStudyChange}
             />
@@ -58,7 +61,7 @@ function Education() {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 }
 export default Education;

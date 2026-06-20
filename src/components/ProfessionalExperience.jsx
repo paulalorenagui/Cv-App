@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/ProfessionalExperience.css";
 
 function ProfessionalExperience() {
   const [company, setCompany] = useState("");
@@ -24,7 +25,7 @@ function ProfessionalExperience() {
     setEndingDate(e.target.value);
   }
   return (
-    <>
+    <div className="section">
       {isEditing ? (
         <>
           <div>
@@ -56,6 +57,8 @@ function ProfessionalExperience() {
             <input
               type="date"
               placeholder="Date from"
+              min="1900-01-01"
+              max="2099-12-31"
               value={beginningDate}
               onChange={handleBeginningDateChange}
             />
@@ -64,6 +67,8 @@ function ProfessionalExperience() {
             <input
               type="date"
               placeholder="Date Until"
+              min="1900-01-01"
+              max="2099-12-31"
               value={endingDate}
               onChange={handleEndingDateChange}
             />
@@ -84,7 +89,7 @@ function ProfessionalExperience() {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 }
 export default ProfessionalExperience;
